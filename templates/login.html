@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <style>
+        .layui-layer, .layui-layer-content, .login-form, .login-form .login-box {
+            border-radius: 10px !important;
+        }
+
+        .layui-layer-dialog .layui-layer-content {
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .login-form {
+            width: 100%;
+            text-align: center;
+            transition: all 1s ease 0s;
+            border: 1px solid rgba(0, 0, 0, .2);
+            background-color: rgba(0, 0, 0, .2);
+        }
+
+        .login-form .login-box {
+            margin: 10px;
+            padding: 10px;
+            transition: all 1s ease 0s;
+            border: 1px solid rgba(0, 0, 0, .2);
+            background-color: #fff;
+        }
+
+
+        .login-form .login-box p label {
+            width: 64px;
+            font-size: 16px;
+        }
+
+        .login-form .login-box p input, .login-form .login-box p select {
+            width: calc(100% - 64px);
+            height: 39px;
+            padding: 2px 5px;
+            line-height: 35px;
+            font-size: 20px;
+            border: 1px solid #CCC;
+        }
+
+        .login-form .login-box p input[type="password"] {
+            width: calc(100% - 128px);
+            border-right: none;
+            height: 40px !important;
+        }
+
+        .login-form .login-box p input[type="button"] {
+            width: 64px;
+            height: 40px !important;
+            border-left: none;
+        }
+
+        .login-form .login-box p {
+            text-align: left;
+        }
+
+        .login-form h2 {
+            height: 40px;
+            line-height: 40px;
+            transition: all 1s ease 0s;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <script charset="UTF-8">
+        $(function () {
+            var html = '<form method="post" class="login-form">{% csrf_token %}<h2>用户登录</h2><div class="login-box"><p><label for="username">用户名：</label><input placeholder="用户名" id="username" type="text" name="username"/></p><p><label for="password">密　码：</label><input placeholder="密码" id="password" type="password" name="password"/><input type="button" value="登录"></p></div></form>';
+            layer.open({
+                id: 'ssssssshfsdjkfhdsjk',
+                closeBtn: false,
+                maxmin: true,
+                title: false,
+                btn: false,
+                resize: false,
+                content: html,
+                area: ['400px'],
+                shade: [0.5, '#393D49']
+            });
+            $('.login-form .login-box p input[type="button"]').on('click', function () {
+                var data = $('.login-form').serializeArray();
+                var submit = false;
+                for (var i in data) {
+                    if (data[i].value == '') {
+                        submit = false;
+                        alert("请输入" + $('.login-form .login-box p input[name="' + data[i].name + '"]').attr('placeholder'));
+                        break;
+                    } else {
+                        submit = true;
+                    }
+                }
+                if (submit) {
+                    $('.login-form').submit();
+                }
+            })
+        })
+    </script>
+{% endblock %}

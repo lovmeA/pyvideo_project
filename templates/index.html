@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row video-container">
+            {% for data in datas %}
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 qingyueheji">
+                    <video name="media" controls>
+                        <source src="{{ host }}{{ data.path }}" type="video/mp4">
+                    </video>
+                    <div class="title">{{ data.title }}</div>
+                    <div class="shade"></div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <a class="up-page" style="display: {% if up > 0 %}block{% else %}none{% endif %}" href="{% url 'like' up height window full %}?host={{ host }}">←</a>
+        <a class="next-page" style="display: {% if datas %}block{% else %}none{% endif %}" href="{% url 'like' down height window full %}?host={{ host }}">→</a>
+    </div>
+	<script>
+		var host = "{{ host }}";
+	</script>
+    <script src="/static/js/PlayVideo.js" charset="UTF-8" type="text/javascript"></script>
+{% endblock %}

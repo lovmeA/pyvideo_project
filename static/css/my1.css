@@ -1,0 +1,291 @@
+body {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    border-radius: 5px;
+    transition: all 1s ease 0s;
+    border: 1px solid rgba(0, 0, 0, .2);
+    background-color: #FFF;
+}
+
+.video-container .qingyueheji, .video-container .qingyueheji, .video-container .qingyueheji {
+    border: 0;
+    padding: 0;
+    border-radius: 5px;
+    transition: all 1s ease 0s;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.container,
+.video-window,
+.video-container .qingyueheji {
+    -moz-box-shadow: 0 0 10px rgba(51, 51, 51, .5), 0 5px 10px rgba(51, 51, 51, .5);
+    -webkit-box-shadow: 0 0 10px rgba(51, 51, 51, .5), 0 5px 10px rgba(51, 51, 51, .5);
+    box-shadow: 0 0 10px rgba(51, 51, 51, .5), 0 5px 10px rgba(51, 51, 51, .5);
+}
+
+.video-window,
+.container .up-page,
+.container .next-page,
+.video-container .qingyueheji {
+    overflow: hidden;
+    transition: all 1s ease 0s;
+    border: 1px solid rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 0 5px rgba(51, 51, 51, .3), 1px 2px 5px rgba(51, 51, 51, .3);
+    -webkit-box-shadow: 0 0 5px rgba(51, 51, 51, .3), 1px 2px 5px rgba(51, 51, 51, .3);
+    box-shadow: 0 0 5px rgba(51, 51, 51, .3), 1px 2px 5px rgba(51, 51, 51, .3);
+}
+
+.video-container .shade:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.video-container .qingyueheji {
+    border: 0;
+    margin-top: 12px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.video-container .qingyueheji, .video-container .qingyueheji video, .video-container .shade {
+    padding: 0;
+    height: 643px;
+    border-radius: 5px;
+}
+
+.video-container .shade {
+    top: 0;
+    width: 100%;
+    border-radius: 5px;
+    position: absolute;
+    transition: all 1s ease 0s;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.video-container .qingyueheji {
+    width: 362px;
+    margin: 5px calc(50% - 362px / 2);
+}
+
+.video-container .qingyueheji video {
+    border: 0;
+    padding: 0;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+.video-container .title {
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 2px 5px;
+    text-align: left;
+    position: absolute;
+    word-break: break-all;
+    transition: all 1s ease 0s;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgba(0, 0, 0, .09);
+}
+
+/* 超小屏幕（手机，小于 768px） */
+/* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */
+
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+    .container {
+        margin-top: 10px;
+    }
+
+    .video-container .qingyueheji {
+        margin: 5px;
+        width: calc(100% / 4 - -52px);
+    }
+
+    .video-container .qingyueheji video {
+        height: 423px;
+    }
+
+    .container .up-page, .container .next-page {
+        width: calc(100% / 4 - -52px);
+    }
+
+    .video-container .qingyueheji .shade, .video-container .qingyueheji {
+        height: 423px;
+    }
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px) {
+    .container {
+        margin-top: 10px;
+    }
+
+    .video-container .qingyueheji {
+        margin: 5px;
+        height: 412px;
+        width: calc(100% / 4 - 10px);
+    }
+
+    .video-container .qingyueheji video {
+        height: 412px;
+    }
+
+    .container .up-page, .container .next-page {
+        width: calc(100% / 4 - 68.5px);
+    }
+
+    .video-container .qingyueheji .shade, .video-container .qingyueheji {
+        height: 412px;
+    }
+}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1200px) {
+    .container {
+        margin-top: 10px;
+    }
+
+    .video-container .qingyueheji {
+        margin: 5px;
+        width: calc(100% / 4 - 68.5px);
+    }
+
+    .video-container .qingyueheji video {
+        height: 398px;
+    }
+
+    .container .up-page, .container .next-page {
+        width: calc(100% / 4 - 68.5px);
+    }
+
+    .video-container .qingyueheji .shade, .video-container .qingyueheji {
+        height: 397px;
+    }
+}
+
+.video-window {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.video-window, .video-window video {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+.video-window .next-shade, .video-window .up-shade {
+    top: 0;
+    position: absolute;
+    width: 50%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.video-window .next-shade {
+    right: 0;
+    border-top-left-radius: 0;
+}
+
+.video-window .up-shade {
+    left: 0;
+    border-top-right-radius: 0;
+}
+
+.container .up-page, .container .next-page {
+    bottom: -55px;
+    height: 35px;
+    width: 20%;
+    line-height: 35px;
+    position: absolute;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 1s ease 0s;
+    color: #FFF;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.container .up-page:hover, .container .next-page:hover {
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.container .up-page {
+    left: 5px;
+}
+
+.container .next-page {
+    right: 5px;
+}
+
+.layui-layer .full-restore-box, .layui-layer .close-box {
+    top: 2px;
+    right: 2px;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    font-size: 20px;
+    line-height: 16.5px;
+    position: absolute;
+    text-align: center;
+    border-radius: 100%;
+    text-decoration: none;
+    transition: all 1s ease 0s;
+    background-color: rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 5px rgba(255, 189, 46, 0);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+}
+
+.layui-layer .full-restore-box {
+    right: 19px;
+}
+
+.layui-layer .full-restore-box a, .layui-layer .close-box a {
+    top: -1px;
+    left: -2.5px;
+    color: #FFF;
+    position: absolute;
+    text-decoration: none;
+}
+
+.layui-layer .full-restore-box .text {
+    top: -1.6px;
+    left: 0.5px;
+    font-size: 25px;
+}
+
+.layui-layer .close-box a {
+    top: 0;
+    left: 2.1px;
+    position: absolute;
+    text-decoration: none;
+}
+
+.layui-layer .full-restore-box:hover {
+    background-color: #FFB800;
+    -moz-box-shadow: 0 0 5px #FFB800;
+    -webkit-box-shadow: 0 0 5px #FFB800;
+    box-shadow: 0 0 5px #FFB800;
+}
+
+.layui-layer .full-restore-gree:hover {
+    background-color: #28CA40;
+    -moz-box-shadow: 0 0 5px #28CA40;
+    -webkit-box-shadow: 0 0 5px #28CA40;
+    box-shadow: 0 0 5px #28CA40;
+}
+
+
+.layui-layer .close-box:hover {
+    background-color: #FF5722;
+    -moz-box-shadow: 0 0 5px #FF5722;
+    -webkit-box-shadow: 0 0 5px #FF5722;
+    box-shadow: 0 0 5px #FF5722;
+}
